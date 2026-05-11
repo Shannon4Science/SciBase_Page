@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SciBase｜面向人类与 AI 的新一代知识基础设施</title>
+  <link rel="icon" href="data:," />
+  <style>
+    :root {
+      --bg: #fbfbfa;
+      --paper: #ffffff;
+      --ink: #101010;
+      --ink-2: #2d2d2d;
+      --muted: #686868;
+      --line: rgba(16, 16, 16, 0.14);
+      --line-strong: rgba(16, 16, 16, 0.32);
+      --soft: #f1f1ef;
+      --soft-2: #e8e8e4;
+      --red: #a61826;
+      --red-soft: rgba(166, 24, 38, 0.09);
+      --red-line: rgba(166, 24, 38, 0.34);
+      --shadow: 0 22px 60px rgba(0, 0, 0, 0.08);
+      --serif: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
+      --sans: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      --mono: "SFMono-Regular", Consolas, Menlo, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(rgba(16, 16, 16, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 16, 16, 0.018) 1px, transparent 1px),
+        var(--bg);
+      background-size: 42px 42px;
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .page {
+      width: min(1240px, calc(100% - 56px));
+      margin: 0 auto;
+      padding-bottom: 96px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 17px 0;
+      background: rgba(251, 251, 250, 0.88);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-family: var(--serif);
+      font-size: 25px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .brand::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: var(--red);
+      border-radius: 50%;
+      transform: translateY(-1px);
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 180ms ease;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.03fr) minmax(360px, 0.97fr);
+      gap: 34px;
+      align-items: center;
+      min-height: calc(100vh - 74px);
+      padding: 58px 0 70px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow,
+    .section-kicker,
+    .card-tag {
+      color: var(--red);
+      font-family: var(--serif);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow { margin-bottom: 18px; }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 0 0 24px;
+      font-size: clamp(45px, 7vw, 88px);
+      line-height: 0.98;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(31px, 4.4vw, 54px);
+      line-height: 1.08;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 27px;
+      line-height: 1.18;
+    }
+
+    .hero-lead,
+    .section-desc {
+      color: var(--muted);
+      font-size: 18px;
+      margin: 0;
+    }
+
+    .hero-lead {
+      max-width: 710px;
+      font-size: 19px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      padding: 11px 18px;
+      font-size: 14px;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--line-strong);
+    }
+
+    .button.secondary:hover {
+      color: var(--red);
+      background: var(--red-soft);
+      border-color: var(--red);
+    }
+
+    .hero-visual,
+    .overview-visual,
+    .card-visual {
+      position: relative;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .hero-visual {
+      min-height: 500px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-visual img,
+    .overview-visual img,
+    .card-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: saturate(0.95) contrast(1.03);
+    }
+
+    .hero-visual::after,
+    .overview-visual::after,
+    .card-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255, 255, 255, 0.62);
+      pointer-events: none;
+    }
+
+    .section {
+      padding: 78px 0 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      padding-top: 16px;
+      border-top: 1px solid var(--line-strong);
+    }
+
+    .overview-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .overview-visual {
+      min-height: 420px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric,
+    .panel,
+    .scenario,
+    .case-card,
+    .entry-card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .metric {
+      min-height: 138px;
+      padding: 20px;
+    }
+
+    .metric:hover,
+    .scenario:hover,
+    .case-card:hover,
+    .entry-card:hover {
+      border-color: var(--red-line);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.06);
+      transform: translateY(-3px);
+    }
+
+    .metric-value {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .overview-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .panel {
+      padding: 24px;
+    }
+
+    .panel h3 {
+      margin-bottom: 16px;
+      font-size: 25px;
+    }
+
+    .bar-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 116px 1fr 76px;
+      gap: 12px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .bar-track {
+      height: 8px;
+      overflow: hidden;
+      background: var(--soft);
+      border: 1px solid rgba(16, 16, 16, 0.08);
+    }
+
+    .bar-fill {
+      width: var(--w);
+      height: 100%;
+      background: var(--red);
+    }
+
+    .scenario-grid,
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .scenario,
+    .case-card {
+      display: flex;
+      min-height: 480px;
+      flex-direction: column;
+    }
+
+    .card-visual {
+      aspect-ratio: 1.48 / 1;
+      border-width: 0 0 1px;
+    }
+
+    .card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 24px;
+    }
+
+    .card-tag {
+      margin-bottom: 14px;
+      color: var(--red);
+    }
+
+    .scenario p,
+    .case-card p {
+      color: var(--muted);
+      font-size: 15.5px;
+      margin: 13px 0 0;
+    }
+
+    .detail-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 20px;
+    }
+
+    .detail-list span {
+      border: 1px solid var(--line);
+      background: var(--soft);
+      color: var(--ink-2);
+      padding: 5px 8px;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .architecture-stage {
+      position: relative;
+      overflow: hidden;
+      padding: 34px;
+      background:
+        linear-gradient(rgba(16, 16, 16, 0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16, 16, 16, 0.018) 1px, transparent 1px),
+        var(--paper);
+      background-size: 34px 34px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .architecture-stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(166, 24, 38, 0.08), transparent 24%),
+        radial-gradient(circle at 88% 76%, rgba(16, 16, 16, 0.04), transparent 26%);
+      pointer-events: none;
+    }
+
+    .arch-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .arch-title-row {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+
+    .architecture-stage h2 {
+      max-width: 820px;
+      color: var(--ink);
+    }
+
+    .arch-note {
+      color: var(--muted);
+      border-left: 1px solid var(--line-strong);
+      padding-left: 16px;
+      font-size: 14px;
+    }
+
+    .arch-layer-stack {
+      position: relative;
+      border-top: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .arch-layer-stack::before {
+      content: "";
+      position: absolute;
+      left: 36px;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(var(--red), rgba(166, 24, 38, 0.08));
+    }
+
+    .layer-pulse {
+      position: absolute;
+      left: 30px;
+      top: 0;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 0 8px rgba(166, 24, 38, 0.1);
+      animation: layerPulse 8.5s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    .arch-layer {
+      position: relative;
+      display: grid;
+      grid-template-columns: 72px minmax(180px, 240px) minmax(0, 1fr) 240px;
+      gap: 22px;
+      align-items: center;
+      min-height: 126px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+      transition: background 180ms ease, transform 180ms ease;
+    }
+
+    .arch-layer:last-child {
+      border-bottom: 0;
+    }
+
+    .arch-layer:hover {
+      background: rgba(166, 24, 38, 0.035);
+      transform: translateX(3px);
+    }
+
+    .layer-index {
+      display: block;
+      color: var(--red);
+      font-family: var(--serif);
+      font-size: 34px;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .layer-name {
+      display: block;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 27px;
+      font-weight: 500;
+      line-height: 1.18;
+    }
+
+    .layer-role {
+      color: var(--ink-2);
+      font-size: clamp(17px, 2vw, 24px);
+      font-weight: 650;
+      line-height: 1.6;
+    }
+
+    .layer-diagram {
+      position: relative;
+      min-height: 100px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.64);
+    }
+
+    .layer-diagram svg {
+      display: block;
+      width: 100%;
+      height: 100px;
+    }
+
+    .layer-diagram .ink {
+      fill: none;
+      stroke: var(--ink);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.8;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .layer-diagram .muted {
+      fill: none;
+      stroke: rgba(16, 16, 16, 0.36);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.4;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .layer-diagram .red {
+      fill: none;
+      stroke: var(--red);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.8;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .layer-diagram .red-fill { fill: var(--red); }
+    .layer-diagram .soft-fill { fill: rgba(16, 16, 16, 0.035); }
+    .layer-diagram .paper-fill { fill: var(--paper); }
+
+    .diagram-index,
+    .diagram-raw {
+      background:
+        linear-gradient(rgba(16, 16, 16, 0.035) 1px, transparent 1px),
+        rgba(255, 255, 255, 0.64);
+      background-size: 100% 18px;
+    }
+
+    .entry-section {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .entry-card {
+      min-height: 312px;
+      padding: 30px;
+    }
+
+    .entry-card h3 {
+      margin-bottom: 14px;
+      font-size: 32px;
+    }
+
+    .entry-card p {
+      color: var(--muted);
+      margin: 0 0 20px;
+    }
+
+    .entry-card .hero-actions {
+      margin-top: auto;
+    }
+
+    .entry-group {
+      margin-top: 22px;
+    }
+
+    .entry-group + .entry-group {
+      margin-top: 18px;
+    }
+
+    .entry-group-title {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--red);
+      font-family: var(--serif);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .endpoint-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .endpoint {
+      padding: 13px 14px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      color: var(--red);
+      font-family: var(--mono);
+      font-size: 13px;
+    }
+
+    .contact-block {
+      display: grid;
+      grid-template-columns: 1fr 112px;
+      gap: 16px;
+      align-items: end;
+      margin-top: 26px;
+    }
+
+    .contact-mail {
+      display: inline-flex;
+      width: fit-content;
+      border-bottom: 1px solid var(--red);
+      color: var(--red);
+      font-family: var(--mono);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .qr-placeholder {
+      display: grid;
+      width: 112px;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid var(--line-strong);
+      background:
+        linear-gradient(90deg, var(--ink) 12px, transparent 12px calc(100% - 12px), var(--ink) calc(100% - 12px)),
+        linear-gradient(var(--ink) 12px, transparent 12px calc(100% - 12px), var(--ink) calc(100% - 12px)),
+        repeating-linear-gradient(45deg, transparent 0 8px, rgba(16, 16, 16, 0.07) 8px 10px),
+        var(--paper);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: space-between;
+      margin-top: 76px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @keyframes layerPulse {
+      0% { transform: translateY(0) scale(0.8); opacity: 0; }
+      8% { opacity: 1; }
+      18% { transform: translateY(72px) scale(1); }
+      38% { transform: translateY(198px) scale(1); }
+      58% { transform: translateY(324px) scale(1); }
+      78% { transform: translateY(450px) scale(1); }
+      94% { opacity: 1; }
+      100% { transform: translateY(576px) scale(0.8); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 1ms !important;
+      }
+    }
+
+    @media (max-width: 1020px) {
+      .hero,
+      .section-head,
+      .overview-layout,
+      .overview-split,
+      .entry-section,
+      .arch-title-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 44px;
+      }
+
+      .hero-visual,
+      .overview-visual {
+        min-height: 380px;
+      }
+
+      .scenario-grid,
+      .case-grid,
+      .arch-layer {
+        grid-template-columns: 1fr;
+      }
+
+      .arch-layer-stack::before {
+        left: 20px;
+      }
+
+      .layer-pulse {
+        left: 14px;
+      }
+
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(100% - 36px, 1240px);
+        padding-bottom: 72px;
+      }
+
+      .brand {
+        align-items: center;
+        font-size: 23px;
+      }
+
+      .brand span { display: none; }
+      .hero { gap: 24px; }
+      h1 { font-size: clamp(42px, 13vw, 62px); }
+      .hero-lead, .section-desc { font-size: 16px; }
+      .metric-grid { grid-template-columns: 1fr; }
+      .bar-row { grid-template-columns: 88px 1fr 66px; gap: 9px; font-size: 12px; }
+      .architecture-stage { padding: 22px; }
+      .arch-layer { gap: 12px; padding: 20px 0 20px 38px; }
+      .layer-index { text-align: left; font-size: 26px; }
+      .layer-name { font-size: 24px; }
+      .layer-role { font-size: 16px; font-weight: 550; }
+      .entry-card, .card-body, .panel, .metric { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav">
+      <a class="brand" href="#top">SciBase <span>AI-Ready Knowledge Base</span></a>
+      <div class="nav-links">
+        <a href="#overview">概览</a>
+        <a href="#scenarios">场景</a>
+        <a href="#architecture">技术架构</a>
+        <a href="#cases">任务样例</a>
+        <a href="#entry">使用入口</a>
+      </div>
+    </nav>
+
+    <section class="hero" id="top">
+      <div>
+        <div class="eyebrow">For Human Search · For Agent Calls</div>
+        <h1>面向人类与 AI 的新一代知识基础设施</h1>
+        <p class="hero-lead">
+          SciBase 覆盖公开学术文献、图书、专利等多类型知识资产，将跨源数据持续加工为可计算、可理解、可追溯、可被 Agent 直接调用的 AI-Ready Knowledge Objects。
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#architecture">查看数据架构</a>
+          <a class="button secondary" href="#entry">了解使用入口</a>
+        </div>
+      </div>
+
+      <aside class="hero-visual" aria-label="SciBase iceberg concept illustration">
+        <img src="assets/images/scibase-hero.png" alt="SciBase 知识基础设施冰山概念图" />
+      </aside>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="section-head">
+        <div class="section-kicker">01 · Overview</div>
+        <div>
+          <h2>覆盖论文、图书、专利的知识总览</h2>
+          <p class="section-desc">SciBase 不是传统文献检索系统，而是面向大模型时代的 AI-Ready 学术知识基础设施，强调全面性、实时性与 Agent 可用性。</p>
+        </div>
+      </div>
+
+      <div class="overview-layout">
+        <figure class="overview-visual" aria-label="SciBase knowledge object illustration">
+          <img src="assets/images/scibase-overview.png" alt="多源知识资产汇聚为 AI-Ready Knowledge Objects" />
+        </figure>
+
+        <div class="metric-grid">
+          <div class="metric"><span class="metric-value">5.16 亿</span><span class="metric-label">知识记录总量，覆盖文献、图书、专利等多类型资产</span></div>
+          <div class="metric"><span class="metric-value">3.41 亿</span><span class="metric-label">学术文献总量，跨学科、跨语种、多来源聚合</span></div>
+          <div class="metric"><span class="metric-value">1.05 亿</span><span class="metric-label">图书总量，覆盖现代图书、古籍与手稿类知识资产</span></div>
+          <div class="metric"><span class="metric-value">7000 万</span><span class="metric-label">专利规模，支撑查新、技术情报与产业研究</span></div>
+          <div class="metric"><span class="metric-value">1.02 亿</span><span class="metric-label">AI-Ready 含全文记录，适用于 RAG、训练与 Agent 调用</span></div>
+          <div class="metric"><span class="metric-value">814</span><span class="metric-label">语言覆盖，支持跨语种知识发现与研究扩展</span></div>
+          <div class="metric"><span class="metric-value">132.99 万</span><span class="metric-label">期刊 / 会议 / Venue 覆盖，支持来源与学科过滤</span></div>
+          <div class="metric"><span class="metric-value">125M</span><span class="metric-label">OA 开放获取文献，约占 28.12%</span></div>
+        </div>
+      </div>
+
+      <div class="overview-split">
+        <div class="panel">
+          <h3>语言分布 Top 5</h3>
+          <div class="bar-list">
+            <div class="bar-row"><span>英文 en</span><div class="bar-track"><div class="bar-fill" style="--w:100%"></div></div><span>2.89 亿</span></div>
+            <div class="bar-row"><span>中文 zh</span><div class="bar-track"><div class="bar-fill" style="--w:17%"></div></div><span>5013 万</span></div>
+            <div class="bar-row"><span>德语 de</span><div class="bar-track"><div class="bar-fill" style="--w:7%"></div></div><span>2145 万</span></div>
+            <div class="bar-row"><span>法语 fr</span><div class="bar-track"><div class="bar-fill" style="--w:4%"></div></div><span>1262 万</span></div>
+            <div class="bar-row"><span>西语 es</span><div class="bar-track"><div class="bar-fill" style="--w:3%"></div></div><span>885 万</span></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>四大学科域</h3>
+          <div class="bar-list">
+            <div class="bar-row"><span>物理科学</span><div class="bar-track"><div class="bar-fill" style="--w:100%"></div></div><span>7487 万</span></div>
+            <div class="bar-row"><span>社会科学</span><div class="bar-track"><div class="bar-fill" style="--w:67%"></div></div><span>5044 万</span></div>
+            <div class="bar-row"><span>健康科学</span><div class="bar-track"><div class="bar-fill" style="--w:52%"></div></div><span>3894 万</span></div>
+            <div class="bar-row"><span>生命科学</span><div class="bar-track"><div class="bar-fill" style="--w:43%"></div></div><span>3190 万</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="scenarios">
+      <div class="section-head">
+        <div class="section-kicker">02 · Scenarios</div>
+        <div>
+          <h2>面向人类与 Agent 的核心使用场景</h2>
+          <p class="section-desc">SciBase 的核心价值不只是“检索”，而是作为 Agent 与企业系统的上游知识数据基础设施。</p>
+        </div>
+      </div>
+
+      <div class="scenario-grid">
+        <article class="scenario">
+          <div class="card-visual"><img src="assets/images/scenario-research-agent.png" alt="Research Agent 数据源供给插图" /></div>
+          <div class="card-body">
+            <div class="card-tag">Scenario 01</div>
+            <h3>Research Agent 数据源供给</h3>
+            <p>为 Auto-Research、Deep Research、技术调研 Agent 提供论文、专利、图书、证据片段和引用上下文，支持自动综述和报告生成。</p>
+            <div class="detail-list"><span>自动文献综述</span><span>技术路线调研</span><span>证据包生成</span></div>
+          </div>
+        </article>
+
+        <article class="scenario">
+          <div class="card-visual"><img src="assets/images/scenario-prior-art.png" alt="Prior-Art 与技术查新插图" /></div>
+          <div class="card-body">
+            <div class="card-tag">Scenario 02</div>
+            <h3>Prior-Art 与技术查新</h3>
+            <p>围绕一个技术 idea，跨论文、专利、图书和产品资料进行相似技术发现、claim 对比、novelty 风险判断与白区机会分析。</p>
+            <div class="detail-list"><span>专利查新</span><span>Novelty 分析</span><span>论文-专利关联</span></div>
+          </div>
+        </article>
+
+        <article class="scenario">
+          <div class="card-visual"><img src="assets/images/scenario-enterprise-mining.png" alt="企业数据挖掘服务插图" /></div>
+          <div class="card-body">
+            <div class="card-tag">Scenario 03</div>
+            <h3>企业数据挖掘服务</h3>
+            <p>面向 2B 客户提供外部知识 enrichment：将企业项目、研发方向、客户需求与全球论文、专利、作者、机构、公司进行链接。</p>
+            <div class="detail-list"><span>知识图谱补全</span><span>技术情报监控</span><span>机构画像</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="architecture-stage">
+        <div class="arch-content">
+          <div class="arch-title-row">
+            <div>
+              <div class="eyebrow">03 · Data Foundation Layers</div>
+              <h2>SciBase 数据基座五层架构</h2>
+            </div>
+            <div class="arch-note">从多源接入、原始留存、标准化解析，到知识对象、证据层与索引治理，形成可追溯、可计算、可被 Agent 调用的数据基座。</div>
+          </div>
+
+          <div class="arch-layer-stack">
+            <span class="layer-pulse" aria-hidden="true"></span>
+            <div class="arch-layer">
+              <span class="layer-index">1</span>
+              <strong class="layer-name">多源接入层</strong>
+              <div class="layer-role">接入论文、专利、图书、标准、数据集、代码等多类型来源</div>
+              <div class="layer-diagram diagram-access" aria-hidden="true">
+                <svg viewBox="0 0 240 100" role="img">
+                  <path class="muted" d="M48 22 C76 28 87 42 106 50" />
+                  <path class="muted" d="M51 78 C77 72 87 60 106 50" />
+                  <path class="muted" d="M60 50 H106" />
+                  <path class="muted" d="M134 50 C155 42 164 28 192 22" />
+                  <path class="muted" d="M134 50 C155 58 165 72 192 78" />
+                  <rect class="ink paper-fill" x="18" y="12" width="30" height="22" rx="2" />
+                  <path class="muted" d="M25 19 H41 M25 25 H38" />
+                  <path class="ink paper-fill" d="M24 69 H50 V86 H24 Z M28 69 V60 H46 V69" />
+                  <rect class="ink paper-fill" x="18" y="42" width="40" height="16" rx="2" />
+                  <path class="red" d="M26 50 H50" />
+                  <path class="ink paper-fill" d="M185 13 H211 V34 H185 Z M202 13 V20 H211" />
+                  <path class="muted" d="M191 24 H205" />
+                  <rect class="ink paper-fill" x="184" y="68" width="32" height="18" rx="2" />
+                  <path class="red" d="M193 78 H207" />
+                  <path class="red paper-fill" d="M106 38 H136 L126 64 H116 Z" />
+                  <circle class="red-fill" cx="121" cy="50" r="3" />
+                </svg>
+              </div>
+            </div>
+            <div class="arch-layer">
+              <span class="layer-index">2</span>
+              <strong class="layer-name">原始数据层</strong>
+              <div class="layer-role">保存原始响应、全文、文件和采集上下文，保证可追溯</div>
+              <div class="layer-diagram diagram-raw" aria-hidden="true">
+                <svg viewBox="0 0 240 100" role="img">
+                  <path class="ink soft-fill" d="M39 24 C39 16 78 16 78 24 V76 C78 84 39 84 39 76 Z" />
+                  <path class="ink" d="M39 24 C39 32 78 32 78 24 M39 42 C39 50 78 50 78 42 M39 60 C39 68 78 68 78 60" />
+                  <rect class="ink paper-fill" x="104" y="20" width="30" height="38" rx="2" />
+                  <path class="muted" d="M111 31 H128 M111 39 H126 M111 47 H124" />
+                  <rect class="ink paper-fill" x="147" y="30" width="36" height="26" rx="2" />
+                  <path class="red" d="M155 42 H176" />
+                  <rect class="ink paper-fill" x="116" y="68" width="70" height="14" rx="2" />
+                  <path class="muted" d="M124 75 H174" />
+                  <path class="red" d="M78 50 C89 50 94 46 104 39 M78 58 C93 58 101 70 116 75" />
+                  <circle class="red-fill" cx="94" cy="46" r="3" />
+                  <circle class="red-fill" cx="102" cy="70" r="3" />
+                </svg>
+              </div>
+            </div>
+            <div class="arch-layer">
+              <span class="layer-index">3</span>
+              <strong class="layer-name">标准化与解析层</strong>
+              <div class="layer-role">统一 schema，解析全文结构，抽取章节、图表、引用和 claims</div>
+              <div class="layer-diagram diagram-parse" aria-hidden="true">
+                <svg viewBox="0 0 240 100" role="img">
+                  <rect class="ink paper-fill" x="24" y="20" width="50" height="62" rx="2" />
+                  <path class="muted" d="M33 33 H65 M33 44 H62 M33 55 H65 M33 66 H56" />
+                  <path class="red" d="M76 36 H107 M76 66 H107" />
+                  <path class="red" d="M98 31 L108 36 L98 41 M98 61 L108 66 L98 71" />
+                  <rect class="ink paper-fill" x="120" y="18" width="34" height="18" rx="2" />
+                  <rect class="ink paper-fill" x="120" y="43" width="34" height="18" rx="2" />
+                  <rect class="ink paper-fill" x="120" y="68" width="34" height="18" rx="2" />
+                  <path class="muted" d="M161 27 H208 M161 52 H208 M161 77 H208" />
+                  <circle class="red-fill" cx="190" cy="52" r="4" />
+                  <path class="muted" d="M137 36 V43 M137 61 V68" />
+                </svg>
+              </div>
+            </div>
+            <div class="arch-layer">
+              <span class="layer-index">4</span>
+              <strong class="layer-name">知识对象与证据层</strong>
+              <div class="layer-role">生成 Paper、Patent、Book 等 canonical objects 和 evidence spans</div>
+              <div class="layer-diagram diagram-object" aria-hidden="true">
+                <svg viewBox="0 0 240 100" role="img">
+                  <circle class="ink paper-fill" cx="64" cy="50" r="24" />
+                  <rect class="red paper-fill" x="104" y="28" width="34" height="44" rx="3" />
+                  <path class="muted" d="M113 42 H130 M113 51 H128 M113 60 H126" />
+                  <path class="ink paper-fill" d="M171 30 H205 V70 H171 Z M179 30 V20 H197 V30" />
+                  <path class="muted" d="M77 39 L104 42 M80 56 L104 58 M138 50 H171" />
+                  <rect class="ink paper-fill" x="28" y="16" width="38" height="12" rx="2" />
+                  <rect class="ink paper-fill" x="28" y="72" width="42" height="12" rx="2" />
+                  <path class="red" d="M47 28 C48 37 52 43 64 50 M70 72 C76 63 84 58 104 58" />
+                  <circle class="red-fill" cx="64" cy="50" r="4" />
+                  <circle class="red-fill" cx="188" cy="50" r="4" />
+                </svg>
+              </div>
+            </div>
+            <div class="arch-layer">
+              <span class="layer-index">5</span>
+              <strong class="layer-name">索引治理层</strong>
+              <div class="layer-role">构建全文、向量、图谱、质量、版权和版本索引</div>
+              <div class="layer-diagram diagram-index" aria-hidden="true">
+                <svg viewBox="0 0 240 100" role="img">
+                  <rect class="ink paper-fill" x="24" y="16" width="40" height="24" rx="2" />
+                  <path class="muted" d="M32 25 H55 M32 32 H50" />
+                  <circle class="ink paper-fill" cx="44" cy="70" r="17" />
+                  <path class="red" d="M35 70 H53 M44 61 V79" />
+                  <circle class="ink paper-fill" cx="121" cy="28" r="15" />
+                  <path class="muted" d="M111 28 H131 M121 18 V38" />
+                  <path class="ink paper-fill" d="M103 66 C103 56 139 56 139 66 V78 C139 88 103 88 103 78 Z" />
+                  <path class="red" d="M103 66 C103 76 139 76 139 66" />
+                  <path class="muted" d="M64 28 H106 M61 70 H103 M136 28 H175 M139 70 H177" />
+                  <rect class="ink paper-fill" x="177" y="16" width="36" height="24" rx="2" />
+                  <path class="red" d="M186 28 L193 34 L205 22" />
+                  <rect class="ink paper-fill" x="178" y="61" width="36" height="24" rx="2" />
+                  <path class="muted" d="M187 71 H206 M187 77 H201" />
+                  <circle class="red-fill" cx="121" cy="70" r="4" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cases">
+      <div class="section-head">
+        <div class="section-kicker">04 · Task Examples</div>
+        <div>
+          <h2>从核心场景拆出的具体任务样例</h2>
+          <p class="section-desc">这里不是另起一组行业案例，而是把上面的三类核心场景进一步拆成可直接调用、交付和评估的任务单元。</p>
+        </div>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-card">
+          <div class="card-visual"><img src="assets/images/case-ai-research.png" alt="Research Agent 自动综述任务插图" /></div>
+          <div class="card-body">
+            <div class="card-tag">Example 01 · Research Agent</div>
+            <h3>自动综述与证据包生成</h3>
+            <p>给定一个研究问题，Agent 调用 SciBase 检索论文、图书与专利上下文，抽取关键证据片段、引用链路和方法差异，生成可追溯的综述草稿。</p>
+            <div class="detail-list"><span>Query 扩展</span><span>Evidence Pack</span><span>引用上下文</span></div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <div class="card-visual"><img src="assets/images/case-top-journals.png" alt="Prior-Art 技术查新任务插图" /></div>
+          <div class="card-body">
+            <div class="card-tag">Example 02 · Prior-Art</div>
+            <h3>技术 idea 查新与相似证据定位</h3>
+            <p>输入一段技术 idea 或 claim 草稿，系统跨论文、专利、图书和标准发现相似表述，返回 novelty 风险点、相似证据和可继续追问的白区方向。</p>
+            <div class="detail-list"><span>相似技术发现</span><span>Claim 对比</span><span>白区机会</span></div>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <div class="card-visual"><img src="assets/images/case-paper-patent.png" alt="企业技术情报监控任务插图" /></div>
+          <div class="card-body">
+            <div class="card-tag">Example 03 · Enterprise Mining</div>
+            <h3>企业研发方向与外部知识链接</h3>
+            <p>围绕企业项目、产品路线或客户需求，持续链接全球论文、专利、作者、机构和公司，形成技术画像、竞品监控和主题变化提醒。</p>
+            <div class="detail-list"><span>项目 enrichment</span><span>竞品监控</span><span>主题 Watch</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="entry">
+      <div class="section-head">
+        <div class="section-kicker">05 · Entry</div>
+        <div>
+          <h2>使用入口：API、在线体验与联系我们</h2>
+          <p class="section-desc">底部区域用于把页面从展示转向转化。</p>
+        </div>
+      </div>
+
+      <div class="entry-section">
+        <div class="entry-card">
+          <h3>API</h3>
+          <p>SciBase 以 API 作为主要集成方式：基础 API 面向检索、元数据、全文与证据获取，Agent-native API 面向可追溯任务调用和自动化研究工作流。</p>
+          <div class="entry-group">
+            <span class="entry-group-title">Basic API</span>
+            <div class="endpoint-list">
+              <div class="endpoint">GET /metadata/search</div>
+              <div class="endpoint">GET /content/fetch</div>
+              <div class="endpoint">POST /evidence/query</div>
+            </div>
+          </div>
+          <div class="entry-group">
+            <span class="entry-group-title">Agent-native API</span>
+            <div class="endpoint-list">
+              <div class="endpoint">POST /agent/search</div>
+              <div class="endpoint">POST /agent/evidence-pack</div>
+              <div class="endpoint">POST /agent/prior-art</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="entry-card">
+          <h3>Online Experience</h3>
+          <p>在线体验聚焦 Agent Search：用户以自然语言提出研究问题，系统返回论文、专利、图书和证据片段，并展示来源、质量信号与可追溯链路。</p>
+          <div class="entry-group">
+            <span class="entry-group-title">Agent Search</span>
+            <div class="endpoint-list">
+              <div class="endpoint">Ask research questions</div>
+              <div class="endpoint">Inspect evidence spans</div>
+              <div class="endpoint">Trace source provenance</div>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a class="button secondary" href="#">进入在线体验</a>
+          </div>
+        </div>
+
+        <div class="entry-card">
+          <h3>Contact</h3>
+          <p>面向 API 试用、数据合作、Agent 场景共建和企业知识基础设施集成需求，可以通过邮箱联系 SciBase 团队，二维码位置预留给后续商务或产品入口。</p>
+          <div class="contact-block">
+            <div>
+              <span class="entry-group-title">Email</span>
+              <a class="contact-mail" href="mailto:contact@scibase.ai">contact@scibase.ai</a>
+            </div>
+            <div class="qr-placeholder" aria-label="二维码预留位">QR</div>
+          </div>
+          <div class="hero-actions">
+            <a class="button" href="mailto:contact@scibase.ai">联系我们</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>SciBase · 面向人类与 AI 的新一代知识基础设施</span>
+      <span>Prototype V2 · Black / White / Red</span>
+    </footer>
+  </main>
+</body>
+</html>
