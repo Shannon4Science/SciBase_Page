@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prior-Art 与技术查新｜SciBase</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="assets/scibase-detail.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="nav">
+      <a class="brand" href="scibase_web_prototype.html#top">SciBase <span>AI-Ready Knowledge Base</span></a>
+      <div class="nav-links">
+        <a href="scibase_web_prototype.html#scenarios">返回场景</a>
+        <a href="scenario-research-agent.html">Research Agent</a>
+        <a href="scenario-enterprise-mining.html">企业挖掘</a>
+        <a href="scibase_web_prototype.html#entry">使用入口</a>
+      </div>
+    </nav>
+
+    <section class="detail-hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Scenario 02 · Prior-Art</div>
+        <h1>Prior-Art 与技术查新</h1>
+        <p class="hero-lead">SciBase 面向技术 idea、专利草稿和研发立项提供跨论文、专利、图书、标准的相似证据定位。它把“有没有人做过”拆成技术要素、相似来源、claim 差异和 novelty 风险。</p>
+        <div class="hero-actions">
+          <a class="button" href="#directions">查看拆解</a>
+          <a class="button secondary" href="scibase_web_prototype.html#cases">查看任务样例</a>
+        </div>
+      </div>
+
+      <figure class="visual-frame" aria-label="Prior-Art scenario illustration">
+        <img src="assets/images/scenario-prior-art.png" alt="Prior-Art 与技术查新插图" />
+      </figure>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">How It Works</div>
+        <div>
+          <h2>从技术 idea 到可解释查新判断</h2>
+          <p class="section-desc">这个场景需要的不只是相似文献列表，而是能支持专利、研发和投资判断的证据对齐、差异解释和风险分层。</p>
+        </div>
+      </div>
+
+      <div class="summary-grid">
+        <article class="summary-card">
+          <h3>输入</h3>
+          <p>技术 idea、claim 草稿、产品功能描述、研发路线假设，以及目标国家、领域和时间范围。</p>
+        </article>
+        <article class="summary-card">
+          <h3>处理</h3>
+          <p>拆解技术要素，跨论文、专利、图书和标准召回相似证据，进行 claim 对齐与差异定位。</p>
+        </article>
+        <article class="summary-card">
+          <h3>输出</h3>
+          <p>相似证据清单、novelty 风险点、可解释差异、白区机会和继续检索建议。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="directions">
+      <div class="section-head">
+        <div class="section-kicker">Detailed Directions</div>
+        <div>
+          <h2>四个可落地的小方向</h2>
+          <p class="section-desc">从 idea 解析到风险结论，每一步都需要可追溯证据，而不是只给一个黑箱分数。</p>
+        </div>
+      </div>
+
+      <div class="direction-grid">
+        <article class="direction-card">
+          <figure class="direction-visual">
+            <img src="assets/images/details/prior-idea-parse.png" alt="技术 idea 结构化解析插图" />
+          </figure>
+          <div class="direction-body">
+            <div class="card-tag">Direction 01</div>
+            <h3>技术 idea 结构化解析</h3>
+            <p>把一句产品想法或一段 claim 草稿拆成对象、动作、材料、流程、约束和效果，形成可检索、可比较的技术要素。</p>
+            <div class="flow-list">
+              <div class="flow-item"><span class="flow-label">Input</span><span>idea、claim 草稿、功能描述</span></div>
+              <div class="flow-item"><span class="flow-label">Process</span><span>要素抽取、术语扩展、边界识别</span></div>
+              <div class="flow-item"><span class="flow-label">Output</span><span>技术要素图、检索 query、约束条件</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="direction-card reverse">
+          <figure class="direction-visual">
+            <img src="assets/images/details/prior-similar-evidence.png" alt="相似论文与专利定位插图" />
+          </figure>
+          <div class="direction-body">
+            <div class="card-tag">Direction 02</div>
+            <h3>相似论文与专利定位</h3>
+            <p>跨论文、专利、图书和标准召回相似技术路径，并将相似证据定位到具体段落、图表、权利要求或引用上下文。</p>
+            <div class="flow-list">
+              <div class="flow-item"><span class="flow-label">Input</span><span>技术要素、领域限制、时间窗口</span></div>
+              <div class="flow-item"><span class="flow-label">Process</span><span>多路召回、语义重排、证据定位</span></div>
+              <div class="flow-item"><span class="flow-label">Output</span><span>相似来源、证据片段、来源质量信号</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="direction-card">
+          <figure class="direction-visual">
+            <img src="assets/images/details/prior-claim-compare.png" alt="Claim 与证据片段比对插图" />
+          </figure>
+          <div class="direction-body">
+            <div class="card-tag">Direction 03</div>
+            <h3>Claim 与证据片段比对</h3>
+            <p>把 claim 要素和相似证据逐项对齐，区分完全覆盖、部分覆盖、相近实现和未覆盖差异，为人工判断提供结构化依据。</p>
+            <div class="flow-list">
+              <div class="flow-item"><span class="flow-label">Input</span><span>claim 要素、证据片段、相似来源</span></div>
+              <div class="flow-item"><span class="flow-label">Process</span><span>要素对齐、差异标注、出处回链</span></div>
+              <div class="flow-item"><span class="flow-label">Output</span><span>比对矩阵、覆盖解释、可复核证据</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="direction-card reverse">
+          <figure class="direction-visual">
+            <img src="assets/images/details/prior-risk-opportunity.png" alt="风险与机会判断插图" />
+          </figure>
+          <div class="direction-body">
+            <div class="card-tag">Direction 04</div>
+            <h3>风险、空白与机会判断</h3>
+            <p>在证据对齐基础上输出 novelty 风险、可修改方向、未被充分覆盖的白区，以及下一轮检索或专家复核建议。</p>
+            <div class="flow-list">
+              <div class="flow-item"><span class="flow-label">Input</span><span>比对结果、相似证据、业务约束</span></div>
+              <div class="flow-item"><span class="flow-label">Process</span><span>风险分层、空白识别、机会归纳</span></div>
+              <div class="flow-item"><span class="flow-label">Output</span><span>查新结论、风险说明、白区方向</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Next</div>
+        <div>
+          <h2>继续查看其他核心场景</h2>
+          <p class="section-desc">Prior-Art 更关注技术相似性和风险判断，其他页面分别展开研究 Agent 与企业知识挖掘。</p>
+        </div>
+      </div>
+      <div class="next-grid">
+        <a class="next-card" href="scenario-research-agent.html"><strong>Research Agent 数据源供给</strong><span>研究问题、证据包、自动综述和 Agent-native API。</span></a>
+        <a class="next-card" href="scenario-enterprise-mining.html"><strong>企业数据挖掘服务</strong><span>外部知识 enrichment、主题监控和企业系统集成。</span></a>
+        <a class="next-card" href="scibase_web_prototype.html#entry"><strong>使用入口</strong><span>API、Agent Search 在线体验和合作联系方式。</span></a>
+      </div>
+    </section>
+
+    <footer>
+      <span>SciBase · Prior-Art 与技术查新</span>
+      <span><a href="scibase_web_prototype.html#top">返回首页</a></span>
+    </footer>
+  </main>
+</body>
+</html>

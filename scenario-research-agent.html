@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Agent 数据源供给｜SciBase</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="assets/scibase-detail.css" />
+</head>
+<body>
+  <main class="page">
+    <nav class="nav">
+      <a class="brand" href="scibase_web_prototype.html#top">SciBase <span>AI-Ready Knowledge Base</span></a>
+      <div class="nav-links">
+        <a href="scibase_web_prototype.html#scenarios">返回场景</a>
+        <a href="scenario-prior-art.html">Prior-Art</a>
+        <a href="scenario-enterprise-mining.html">企业挖掘</a>
+        <a href="scibase_web_prototype.html#entry">使用入口</a>
+      </div>
+    </nav>
+
+    <section class="detail-hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Scenario 01 · Research Agent</div>
+        <h1>Research Agent 数据源供给</h1>
+        <p class="hero-lead">SciBase 为 Auto-Research、Deep Research 和科研工作流 Agent 提供可检索、可引用、可追溯的知识对象。它把论文、专利、图书、证据片段和引用上下文转化为 Agent 可以稳定调用的上游知识层。</p>
+        <div class="hero-actions">
+          <a class="button" href="#directions">查看拆解</a>
+          <a class="button secondary" href="scibase_web_prototype.html#architecture">查看数据架构</a>
+        </div>
+      </div>
+
+      <figure class="visual-frame" aria-label="Research Agent scenario illustration">
+        <img src="assets/images/scenario-research-agent.png" alt="Research Agent 数据源供给插图" />
+      </figure>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">How It Works</div>
+        <div>
+          <h2>从研究问题到可追溯证据包</h2>
+          <p class="section-desc">这个场景的核心不是替人“搜结果”，而是帮助 Agent 把研究问题拆成检索计划、证据集合、引用链路和可复核输出。</p>
+        </div>
+      </div>
+
+      <div class="summary-grid">
+        <article class="summary-card">
+          <h3>输入</h3>
+          <p>研究问题、主题边界、方法关键词、领域约束，以及需要关注的论文、专利或图书类型。</p>
+        </article>
+        <article class="summary-card">
+          <h3>处理</h3>
+          <p>基于多源索引扩展检索路径，抽取 evidence spans、引用上下文、方法差异和来源质量信号。</p>
+        </article>
+        <article class="summary-card">
+          <h3>输出</h3>
+          <p>面向 Agent 的 evidence pack、可追溯综述材料、候选引用、研究脉络和下一步追问方向。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="directions">
+      <div class="section-head">
+        <div class="section-kicker">Detailed Directions</div>
+        <div>
+          <h2>四个可落地的小方向</h2>
+          <p class="section-desc">每个方向都对应一个 Agent 可以直接调用或组合调用的任务单元。</p>
+        </div>
+      </div>
+
+      <div class="direction-grid">
+        <article class="direction-card">
+          <figure class="direction-visual">
+            <img src="assets/images/details/research-question-planning.png" alt="研究问题理解与检索规划插图" />
+          </figure>
+          <div class="direction-body">
+            <div class="card-tag">Direction 01</div>
+            <h3>研究问题理解与检索规划</h3>
+            <p>Agent 先把自然语言问题转成可执行的检索策略：明确领域、对象、时间范围、关键方法、排除条件和可接受证据类型。</p>
+            <div class="flow-list">
+              <div class="flow-item"><span class="flow-label">Input</span><span>研究问题、领域边界、目标文献类型</span></div>
+              <div class="flow-item"><span class="flow-label">Process</span><span>Query 扩展、语义召回、来源过滤</span></div>
+              <div class="flow-item"><span class="flow-label">Output</span><span>检索计划、候选来源、追问路径</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="direction-card reverse">
+          <figure class="direction-visual">
+            <img src="assets/images/details/research-evidence-pack.png" alt="多源证据包生成插图" />
+          </figure>
+          <div class="direction-body">
+            <div class="card-tag">Direction 02</div>
+            <h3>多源证据包生成</h3>
+            <p>围绕同一问题聚合论文、专利、图书和数据集中的证据片段，并保留来源、位置、版本和质量信号，避免回答脱离出处。</p>
+            <div class="flow-list">
+              <div class="flow-item"><span class="flow-label">Input</span><span>主题、候选记录、引用线索</span></div>
+              <div class="flow-item"><span class="flow-label">Process</span><span>全文定位、证据抽取、去重聚合</span></div>
+              <div class="flow-item"><span class="flow-label">Output</span><span>Evidence Pack、来源链路、证据置信度</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="direction-card">
+          <figure class="direction-visual">
+            <img src="assets/images/details/research-synthesis-review.png" alt="自动综述与观点对齐插图" />
+          </figure>
+          <div class="direction-body">
+            <div class="card-tag">Direction 03</div>
+            <h3>自动综述与观点对齐</h3>
+            <p>Agent 可以基于证据包生成综述草稿，同时把结论、方法差异和争议点映射回原始片段，让人类评审时能快速复核。</p>
+            <div class="flow-list">
+              <div class="flow-item"><span class="flow-label">Input</span><span>证据包、研究框架、目标报告结构</span></div>
+              <div class="flow-item"><span class="flow-label">Process</span><span>观点聚类、方法比较、引用对齐</span></div>
+              <div class="flow-item"><span class="flow-label">Output</span><span>综述草稿、差异表、可复核引用</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="direction-card reverse">
+          <figure class="direction-visual">
+            <img src="assets/images/details/research-agent-api.png" alt="Agent-native API 调用插图" />
+          </figure>
+          <div class="direction-body">
+            <div class="card-tag">Direction 04</div>
+            <h3>Agent-native API 调用</h3>
+            <p>上层 Agent 不需要自己拼装复杂数据处理链路，可以通过任务型 API 获取检索结果、证据包、引用上下文和后续追问建议。</p>
+            <div class="flow-list">
+              <div class="flow-item"><span class="flow-label">Input</span><span>Agent 任务、问题上下文、约束条件</span></div>
+              <div class="flow-item"><span class="flow-label">Process</span><span>任务路由、检索编排、证据校验</span></div>
+              <div class="flow-item"><span class="flow-label">Output</span><span>结构化响应、来源追溯、可继续调用接口</span></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-kicker">Next</div>
+        <div>
+          <h2>继续查看其他核心场景</h2>
+          <p class="section-desc">Research Agent 更关注研究工作流，另外两个场景则分别面向技术查新与企业级知识挖掘。</p>
+        </div>
+      </div>
+      <div class="next-grid">
+        <a class="next-card" href="scenario-prior-art.html"><strong>Prior-Art 与技术查新</strong><span>技术 idea、claim 比对、novelty 风险与白区机会。</span></a>
+        <a class="next-card" href="scenario-enterprise-mining.html"><strong>企业数据挖掘服务</strong><span>企业研发主题、外部知识链接、情报监控和系统集成。</span></a>
+        <a class="next-card" href="scibase_web_prototype.html#entry"><strong>使用入口</strong><span>API、Agent Search 在线体验和合作联系方式。</span></a>
+      </div>
+    </section>
+
+    <footer>
+      <span>SciBase · Research Agent 数据源供给</span>
+      <span><a href="scibase_web_prototype.html#top">返回首页</a></span>
+    </footer>
+  </main>
+</body>
+</html>

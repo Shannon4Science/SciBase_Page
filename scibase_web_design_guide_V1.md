@@ -2,7 +2,7 @@
 
 版本：V1  
 对应原型：[scibase_web_prototype.html](/Users/shangfukai/Dev/Scibase/LandingPage/scibase_web_prototype.html)  
-更新时间：2026-05-11  
+更新时间：2026-05-14  
 视觉方向：黑 / 白 / 红，简约、克制、学术手绘感
 
 ---
@@ -73,7 +73,7 @@
 
 ## 4. 页面信息架构
 
-当前 V1 页面按照 5 个主模块组织：
+当前 V1 首页按照 5 个主模块组织：
 
 ```text
 顶部导航
@@ -92,6 +92,23 @@
 ```
 
 其中，“任务样例”不是独立行业案例，而是对核心场景的进一步拆分，展示可以直接调用、交付和评估的具体任务。
+
+V1 同时包含 3 个独立场景详情页，作为首页核心场景卡片的点击后承接：
+
+```text
+scenario-research-agent.html
+scenario-prior-art.html
+scenario-enterprise-mining.html
+```
+
+详情页统一结构：
+
+```text
+场景 Hero
+→ 输入 / 处理 / 输出摘要
+→ 4 个小方向拆解
+→ 其他场景与使用入口跳转
+```
 
 ---
 
@@ -152,7 +169,7 @@ Minimal / Academic / Infrastructure / Trustworthy / Archival / Agent-ready
 
 ## 6. 插图系统
 
-V1 使用 8 张生成式 PNG 插图，均为无文字图片，不含 logo、水印或界面文案。
+V1 首页使用 8 张生成式 PNG 插图，场景详情页补充 12 张小方向 PNG 插图，均为白底、黑线、少量红色强调，不含 logo、水印或界面文案。
 
 统一风格：
 
@@ -174,6 +191,23 @@ minimal composition, no text, no logo, no watermark
 | 自动综述任务样例 | `assets/images/case-ai-research.png` |
 | 查新任务样例 | `assets/images/case-top-journals.png` |
 | 企业情报任务样例 | `assets/images/case-paper-patent.png` |
+
+详情页补充资产：
+
+| 使用位置 | 文件 |
+|---|---|
+| 研究问题理解与检索规划 | `assets/images/details/research-question-planning.png` |
+| 多源证据包生成 | `assets/images/details/research-evidence-pack.png` |
+| 自动综述与观点对齐 | `assets/images/details/research-synthesis-review.png` |
+| Agent-native API 调用 | `assets/images/details/research-agent-api.png` |
+| 技术 idea 结构化解析 | `assets/images/details/prior-idea-parse.png` |
+| 相似论文与专利定位 | `assets/images/details/prior-similar-evidence.png` |
+| Claim 与证据片段比对 | `assets/images/details/prior-claim-compare.png` |
+| 风险、空白与机会判断 | `assets/images/details/prior-risk-opportunity.png` |
+| 企业研发主题建模 | `assets/images/details/enterprise-topic-map.png` |
+| 外部论文与专利链接 | `assets/images/details/enterprise-external-linking.png` |
+| 技术情报持续监控 | `assets/images/details/enterprise-watch-monitor.png` |
+| 企业系统与 Agent 集成 | `assets/images/details/enterprise-system-integration.png` |
 
 插图约束：
 
@@ -409,6 +443,113 @@ assets/images/scenario-enterprise-mining.png
 ```text
 知识图谱补全 / 技术情报监控 / 机构画像
 ```
+
+### 交互
+
+- 三张核心场景卡片整体可点击。
+- 卡片底部使用克制的文字提示：
+
+```text
+查看场景拆解 →
+```
+
+- 点击后分别进入独立详情页，不在首页展开长内容，避免首页信息密度失控。
+- Hover 仅做轻微位移、红色边框提示和箭头位移，不使用强动效。
+
+---
+
+## 7.4.1 Scenarios 详情页
+
+### 目的
+
+详情页用于把首页的三个大方向进一步拆成可理解、可交付、可集成的小任务。它不是营销页，而是面向产品、研发、Agent 团队和企业客户解释“这个场景具体怎么用”。
+
+### 当前页面
+
+| 场景 | 页面 |
+|---|---|
+| Research Agent 数据源供给 | `scenario-research-agent.html` |
+| Prior-Art 与技术查新 | `scenario-prior-art.html` |
+| 企业数据挖掘服务 | `scenario-enterprise-mining.html` |
+
+三页共享样式文件：
+
+```text
+assets/scibase-detail.css
+```
+
+### 统一页面结构
+
+每个详情页采用同一套结构：
+
+```text
+顶部导航
+→ 场景 Hero
+→ 输入 / 处理 / 输出摘要
+→ 四个小方向拆解
+→ 其他场景与使用入口跳转
+→ Footer
+```
+
+### 视觉规则
+
+- 与首页共享黑 / 白 / 红、衬线标题、细线边框、低对比网格背景。
+- Hero 右侧使用对应场景主插图，不重新做复杂视觉系统。
+- 小方向卡片采用左右图文结构，交替排布，提升阅读节奏。
+- 每个小方向包含一张白底插图、一个标题、一段说明，以及 `Input / Process / Output` 三段式拆解。
+- 移动端全部变为单列，插图保持 `object-fit: contain`，不裁切主体内容。
+- 所有 `figure` 清除默认外边距，避免移动端横向溢出。
+
+### Research Agent 数据源供给
+
+页面定位：
+
+```text
+把 Research Agent 的外部知识调用拆成从问题理解到证据包、综述与 API 调用的完整链路。
+```
+
+小方向：
+
+| 小方向 | 重点 |
+|---|---|
+| 研究问题理解与检索规划 | 把自然语言研究问题转成可执行检索策略 |
+| 多源证据包生成 | 聚合论文、专利、图书和数据集证据片段 |
+| 自动综述与观点对齐 | 基于证据包生成可复核综述材料 |
+| Agent-native API 调用 | 将检索、证据、引用上下文封装为任务型 API |
+
+### Prior-Art 与技术查新
+
+页面定位：
+
+```text
+把技术 idea 或 claim 草稿拆成技术要素、相似证据、claim 比对和 novelty 风险判断。
+```
+
+小方向：
+
+| 小方向 | 重点 |
+|---|---|
+| 技术 idea 结构化解析 | 抽取对象、动作、材料、流程、约束和效果 |
+| 相似论文与专利定位 | 跨论文、专利、图书和标准定位相似来源 |
+| Claim 与证据片段比对 | 将 claim 要素逐项映射回证据片段 |
+| 风险、空白与机会判断 | 输出 novelty 风险、差异点和白区方向 |
+
+### 企业数据挖掘服务
+
+页面定位：
+
+```text
+把企业内部研发方向、产品线和客户需求链接到外部论文、专利、机构、作者、公司与主题演化。
+```
+
+小方向：
+
+| 小方向 | 重点 |
+|---|---|
+| 企业研发主题建模 | 将项目、产品和需求整理为稳定主题 |
+| 外部论文与专利链接 | 将企业主题链接到外部论文、专利和机构网络 |
+| 技术情报持续监控 | 对重点主题、竞品、机构和专家建立 watch |
+| 企业系统与 Agent 集成 | 通过基础 API 与 Agent-native API 接入企业系统 |
 
 ---
 
@@ -692,4 +833,3 @@ V1 动效只做低频反馈，不做强表现型动画：
 - Entry 为 API、Online Experience、Contact 三张卡片。
 - 桌面端无内容重叠，移动端单列堆叠正常。
 - 架构动效低频、克制，并尊重 `prefers-reduced-motion`。
-

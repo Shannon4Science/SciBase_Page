@@ -42,6 +42,7 @@
 
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
+    figure { margin: 0; }
 
     .page {
       width: min(1240px, calc(100% - 56px));
@@ -227,7 +228,7 @@
     }
 
     .hero-visual {
-      min-height: 500px;
+      aspect-ratio: 1.62 / 1;
       box-shadow: var(--shadow);
     }
 
@@ -418,6 +419,25 @@
       padding: 5px 8px;
       font-size: 12px;
       line-height: 1.2;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 18px;
+      color: var(--red);
+      font-family: var(--serif);
+      font-size: 14px;
+    }
+
+    .card-link::after {
+      content: "→";
+      transition: transform 180ms ease;
+    }
+
+    .scenario:hover .card-link::after {
+      transform: translateX(4px);
     }
 
     .architecture-stage {
@@ -737,7 +757,7 @@
 
       .hero-visual,
       .overview-visual {
-        min-height: 380px;
+        min-height: 320px;
       }
 
       .scenario-grid,
@@ -770,6 +790,11 @@
 
       .brand span { display: none; }
       .hero { gap: 24px; }
+      .hero-visual {
+        width: 100%;
+        min-height: 0;
+        aspect-ratio: 1.32 / 1;
+      }
       h1 { font-size: clamp(42px, 13vw, 62px); }
       .hero-lead, .section-desc { font-size: 16px; }
       .metric-grid { grid-template-columns: 1fr; }
@@ -874,35 +899,38 @@
       </div>
 
       <div class="scenario-grid">
-        <article class="scenario">
+        <a class="scenario" href="scenario-research-agent.html" aria-label="查看 Research Agent 数据源供给场景拆解">
           <div class="card-visual"><img src="assets/images/scenario-research-agent.png" alt="Research Agent 数据源供给插图" /></div>
           <div class="card-body">
             <div class="card-tag">Scenario 01</div>
             <h3>Research Agent 数据源供给</h3>
             <p>为 Auto-Research、Deep Research、技术调研 Agent 提供论文、专利、图书、证据片段和引用上下文，支持自动综述和报告生成。</p>
             <div class="detail-list"><span>自动文献综述</span><span>技术路线调研</span><span>证据包生成</span></div>
+            <span class="card-link">查看场景拆解</span>
           </div>
-        </article>
+        </a>
 
-        <article class="scenario">
+        <a class="scenario" href="scenario-prior-art.html" aria-label="查看 Prior-Art 与技术查新场景拆解">
           <div class="card-visual"><img src="assets/images/scenario-prior-art.png" alt="Prior-Art 与技术查新插图" /></div>
           <div class="card-body">
             <div class="card-tag">Scenario 02</div>
             <h3>Prior-Art 与技术查新</h3>
             <p>围绕一个技术 idea，跨论文、专利、图书和产品资料进行相似技术发现、claim 对比、novelty 风险判断与白区机会分析。</p>
             <div class="detail-list"><span>专利查新</span><span>Novelty 分析</span><span>论文-专利关联</span></div>
+            <span class="card-link">查看场景拆解</span>
           </div>
-        </article>
+        </a>
 
-        <article class="scenario">
+        <a class="scenario" href="scenario-enterprise-mining.html" aria-label="查看企业数据挖掘服务场景拆解">
           <div class="card-visual"><img src="assets/images/scenario-enterprise-mining.png" alt="企业数据挖掘服务插图" /></div>
           <div class="card-body">
             <div class="card-tag">Scenario 03</div>
             <h3>企业数据挖掘服务</h3>
             <p>面向 2B 客户提供外部知识 enrichment：将企业项目、研发方向、客户需求与全球论文、专利、作者、机构、公司进行链接。</p>
             <div class="detail-list"><span>知识图谱补全</span><span>技术情报监控</span><span>机构画像</span></div>
+            <span class="card-link">查看场景拆解</span>
           </div>
-        </article>
+        </a>
       </div>
     </section>
 
