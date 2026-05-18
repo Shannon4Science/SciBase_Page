@@ -624,20 +624,31 @@
     .entry-card {
       min-height: 312px;
       padding: 30px;
+      display: flex;
+      flex-direction: column;
     }
 
     .entry-card h3 {
       margin-bottom: 14px;
-      font-size: 32px;
+      font-size: 28px;
+      font-family: inherit;
     }
 
     .entry-card p {
       color: var(--muted);
-      margin: 0 0 20px;
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0 0 16px;
+      min-height: 4.8em;
+    }
+
+    .entry-card .entry-content {
+      flex: 1;
     }
 
     .entry-card .hero-actions {
-      margin-top: auto;
+      margin-top: 20px;
+      padding-top: 10px;
     }
 
     .entry-group {
@@ -677,8 +688,9 @@
       display: grid;
       grid-template-columns: 1fr 112px;
       gap: 16px;
+      align-items: start;
       align-items: end;
-      margin-top: 26px;
+      margin-top: 22px;
     }
 
     .contact-mail {
@@ -856,13 +868,11 @@
 
         <div class="metric-grid">
           <div class="metric"><span class="metric-value">5.16 亿</span><span class="metric-label">知识记录总量，覆盖文献、图书、专利等多类型资产</span></div>
-          <div class="metric"><span class="metric-value">3.41 亿</span><span class="metric-label">学术文献总量，跨学科、跨语种、多来源聚合</span></div>
-          <div class="metric"><span class="metric-value">1.05 亿</span><span class="metric-label">图书总量，覆盖现代图书、古籍与手稿类知识资产</span></div>
-          <div class="metric"><span class="metric-value">7000 万</span><span class="metric-label">专利规模，支撑查新、技术情报与产业研究</span></div>
-          <div class="metric"><span class="metric-value">1.02 亿</span><span class="metric-label">AI-Ready 含全文记录，适用于 RAG、训练与 Agent 调用</span></div>
-          <div class="metric"><span class="metric-value">814</span><span class="metric-label">语言覆盖，支持跨语种知识发现与研究扩展</span></div>
+          <div class="metric"><span class="metric-value">3.41 亿</span><span class="metric-label">文献记录数，跨学科、跨语种、多来源聚合</span></div>
+          <div class="metric"><span class="metric-value">1.05 亿</span><span class="metric-label">图书记录数，覆盖现代图书、古籍与手稿类知识资产</span></div>
+          <div class="metric"><span class="metric-value">7000 万</span><span class="metric-label">专利记录数，支撑查新、技术情报与产业研究</span></div>
+          <div class="metric"><span class="metric-value">1.02 亿</span><span class="metric-label">AI-Ready 含全文记录数，适用于 RAG、训练与 Agent 调用</span></div>
           <div class="metric"><span class="metric-value">132.99 万</span><span class="metric-label">期刊 / 会议 / Venue 覆盖，支持来源与学科过滤</span></div>
-          <div class="metric"><span class="metric-value">125M</span><span class="metric-label">OA 开放获取文献，约占 28.12%</span></div>
         </div>
       </div>
 
@@ -1059,83 +1069,38 @@
       </div>
     </section>
 
-    <section class="section" id="cases">
-      <div class="section-head">
-        <div class="section-kicker">04 · Task Examples</div>
-        <div>
-          <h2>从核心场景拆出的具体任务样例</h2>
-          <p class="section-desc">这里不是另起一组行业案例，而是把上面的三类核心场景进一步拆成可直接调用、交付和评估的任务单元。</p>
-        </div>
-      </div>
-
-      <div class="case-grid">
-        <article class="case-card">
-          <div class="card-visual"><img src="assets/images/case-ai-research.png" alt="Research Agent 自动综述任务插图" /></div>
-          <div class="card-body">
-            <div class="card-tag">Example 01 · Research Agent</div>
-            <h3>自动综述与证据包生成</h3>
-            <p>给定一个研究问题，Agent 调用 SciBase 检索论文、图书与专利上下文，抽取关键证据片段、引用链路和方法差异，生成可追溯的综述草稿。</p>
-            <div class="detail-list"><span>Query 扩展</span><span>Evidence Pack</span><span>引用上下文</span></div>
-          </div>
-        </article>
-
-        <article class="case-card">
-          <div class="card-visual"><img src="assets/images/case-top-journals.png" alt="Prior-Art 技术查新任务插图" /></div>
-          <div class="card-body">
-            <div class="card-tag">Example 02 · Prior-Art</div>
-            <h3>技术 idea 查新与相似证据定位</h3>
-            <p>输入一段技术 idea 或 claim 草稿，系统跨论文、专利、图书和标准发现相似表述，返回 novelty 风险点、相似证据和可继续追问的白区方向。</p>
-            <div class="detail-list"><span>相似技术发现</span><span>Claim 对比</span><span>白区机会</span></div>
-          </div>
-        </article>
-
-        <article class="case-card">
-          <div class="card-visual"><img src="assets/images/case-paper-patent.png" alt="企业技术情报监控任务插图" /></div>
-          <div class="card-body">
-            <div class="card-tag">Example 03 · Enterprise Mining</div>
-            <h3>企业研发方向与外部知识链接</h3>
-            <p>围绕企业项目、产品路线或客户需求，持续链接全球论文、专利、作者、机构和公司，形成技术画像、竞品监控和主题变化提醒。</p>
-            <div class="detail-list"><span>项目 enrichment</span><span>竞品监控</span><span>主题 Watch</span></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
     <section class="section" id="entry">
       <div class="section-head">
-        <div class="section-kicker">05 · Entry</div>
+        <div class="section-kicker">04 · Entry</div>
         <div>
-          <h2>使用入口：API、在线体验与联系我们</h2>
-          <p class="section-desc">底部区域用于把页面从展示转向转化。</p>
+          <h2>使用入口</h2>
+          <p class="section-desc"></p>
         </div>
       </div>
 
       <div class="entry-section">
         <div class="entry-card">
           <h3>API</h3>
-          <p>SciBase 以 API 作为主要集成方式：基础 API 面向检索、元数据、全文与证据获取，Agent-native API 面向可追溯任务调用和自动化研究工作流。</p>
-          <div class="entry-group">
-            <span class="entry-group-title">Basic API</span>
+          <p>智能搜索接口。输入自然语言问题，返回来自学术文献和可信网页的相关文本片段，并附带相关性分数。支持全文检索、向量语义搜索及两者融合。</p>
+          <div class="entry-content">
+            <span class="entry-group-title">Endpoints</span>
             <div class="endpoint-list">
-              <div class="endpoint">GET /metadata/search</div>
-              <div class="endpoint">GET /content/fetch</div>
-              <div class="endpoint">POST /evidence/query</div>
+              <div class="endpoint"><strong>POST</strong> /agentic-search</div>
+              <div class="endpoint"><strong>GET</strong> /content</div>
+              <div class="endpoint"><strong>GET</strong> /resource</div>
+              <div class="endpoint"><strong>POST</strong> /meta-search</div>
+              <div class="endpoint"><strong>GET</strong> /meta-catalog</div>
             </div>
           </div>
-          <div class="entry-group">
-            <span class="entry-group-title">Agent-native API</span>
-            <div class="endpoint-list">
-              <div class="endpoint">POST /agent/search</div>
-              <div class="endpoint">POST /agent/evidence-pack</div>
-              <div class="endpoint">POST /agent/prior-art</div>
-            </div>
+          <div class="hero-actions">
+            <a class="button secondary" href="https://sciverse.opendatalab.org.cn/docs" target="_blank" rel="noopener">查看接口文档 ↗</a>
           </div>
         </div>
 
         <div class="entry-card">
-          <h3>Online Experience</h3>
-          <p>在线体验聚焦 Agent Search：用户以自然语言提出研究问题，系统返回论文、专利、图书和证据片段，并展示来源、质量信号与可追溯链路。</p>
-          <div class="entry-group">
+          <h3>在线体验</h3>
+          <p>聚焦 Agent Search：以自然语言提出研究问题，系统返回论文、专利、图书和证据片段，并展示来源、质量信号与可追溯链路。</p>
+          <div class="entry-content">
             <span class="entry-group-title">Agent Search</span>
             <div class="endpoint-list">
               <div class="endpoint">Ask research questions</div>
@@ -1144,22 +1109,24 @@
             </div>
           </div>
           <div class="hero-actions">
-            <a class="button secondary" href="#">进入在线体验</a>
+            <a class="button secondary" href="https://sciverse.opendatalab.org.cn/" target="_blank" rel="noopener">进入在线体验</a>
           </div>
         </div>
 
         <div class="entry-card">
-          <h3>Contact</h3>
-          <p>面向 API 试用、数据合作、Agent 场景共建和企业知识基础设施集成需求，可以通过邮箱联系 SciBase 团队，二维码位置预留给后续商务或产品入口。</p>
-          <div class="contact-block">
-            <div>
-              <span class="entry-group-title">Email</span>
-              <a class="contact-mail" href="mailto:contact@scibase.ai">contact@scibase.ai</a>
+          <h3>联系我们</h3>
+          <p>面向 API 试用、数据合作、Agent 场景共建和企业知识基础设施集成需求，欢迎通过邮箱联系团队。</p>
+          <div class="entry-content">
+            <div class="contact-block">
+              <div>
+                <span class="entry-group-title">Email</span>
+                <a class="contact-mail" href="mailto:OpendataLab@pjlab.org.cn">OpendataLab@pjlab.org.cn</a>
+              </div>
+              <img src="assets/images/qrcode.png" alt="二维码" style="width:100px;height:100px;object-fit:contain" />
             </div>
-            <div class="qr-placeholder" aria-label="二维码预留位">QR</div>
           </div>
           <div class="hero-actions">
-            <a class="button" href="mailto:contact@scibase.ai">联系我们</a>
+            <a class="button" href="mailto:OpendataLab@pjlab.org.cn">发送邮件</a>
           </div>
         </div>
       </div>
@@ -1167,7 +1134,7 @@
 
     <footer>
       <span>SciBase · 面向人类与 AI 的新一代知识基础设施</span>
-      <span>Prototype V2 · Black / White / Red</span>
+      <span></span>
     </footer>
   </main>
 </body>
