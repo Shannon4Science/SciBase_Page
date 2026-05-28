@@ -1,95 +1,95 @@
 {
   "meta": {
     "source": "test.v_dba_request_content_stats",
-    "exported_at": "2026-05-28T14:02:36.182832+00:00",
+    "exported_at": "2026-05-28T14:19:19.584158+00:00",
     "row_count": 92,
-    "min_updated_at": "2026-05-28 22:02:29",
-    "max_updated_at": "2026-05-28 22:02:29"
+    "min_updated_at": "2026-05-28 22:19:13",
+    "max_updated_at": "2026-05-28 22:19:13"
   },
   "overview": {
     "total_records": {
       "label": "知识记录总量",
       "value": 465670044,
       "extra_value": null,
-      "updated_at": "2026-05-28 22:02:29"
+      "updated_at": "2026-05-28 22:19:13"
     },
     "paper_count": {
       "label": "学术文献总量",
       "value": 359966038,
       "extra_value": null,
-      "updated_at": "2026-05-28 22:02:29"
+      "updated_at": "2026-05-28 22:19:13"
     },
     "ebook_count": {
       "label": "图书总量",
       "value": 105704006,
       "extra_value": null,
-      "updated_at": "2026-05-28 22:02:29"
+      "updated_at": "2026-05-28 22:19:13"
     },
     "fulltext_count": {
       "label": "AI-Ready含全文记录数",
       "value": 113700825,
       "extra_value": null,
-      "updated_at": "2026-05-28 22:02:29"
+      "updated_at": "2026-05-28 22:19:13"
     },
     "oa_count": {
       "label": "OA开放获取文献数",
       "value": 186993347,
       "extra_value": null,
-      "updated_at": "2026-05-28 22:02:29"
+      "updated_at": "2026-05-28 22:19:13"
     },
     "language_count": {
       "label": "语言覆盖数",
       "value": 865,
       "extra_value": null,
-      "updated_at": "2026-05-28 22:02:29"
+      "updated_at": "2026-05-28 22:19:13"
     },
     "venue_count": {
       "label": "期刊/会议覆盖数",
       "value": 1936371,
       "extra_value": null,
-      "updated_at": "2026-05-28 22:02:29"
+      "updated_at": "2026-05-28 22:19:13"
     },
     "paper_year_min": {
       "label": "论文最早年份",
       "value": 1000,
       "extra_value": null,
-      "updated_at": "2026-05-28 22:02:29"
+      "updated_at": "2026-05-28 22:19:13"
     },
     "paper_year_max": {
       "label": "论文最晚年份",
       "value": 2026,
       "extra_value": null,
-      "updated_at": "2026-05-28 22:02:29"
+      "updated_at": "2026-05-28 22:19:13"
     },
     "paper_peak_year": {
       "label": "论文峰值年份",
       "value": 2025,
       "extra_value": 44646102.0,
-      "updated_at": "2026-05-28 22:02:29"
+      "updated_at": "2026-05-28 22:19:13"
     },
     "ebook_year_min": {
       "label": "图书最早年份",
       "value": 1000,
       "extra_value": null,
-      "updated_at": "2026-05-28 22:02:29"
+      "updated_at": "2026-05-28 22:19:13"
     },
     "ebook_year_max": {
       "label": "图书最晚年份",
       "value": 2026,
       "extra_value": null,
-      "updated_at": "2026-05-28 22:02:29"
+      "updated_at": "2026-05-28 22:19:13"
     },
     "ebook_peak_year": {
       "label": "图书峰值年份",
       "value": 2010,
       "extra_value": 5861232.0,
-      "updated_at": "2026-05-28 22:02:29"
+      "updated_at": "2026-05-28 22:19:13"
     },
     "fulltext_oa_paper_count": {
       "label": "有全文OA论文数",
       "value": 28261273,
       "extra_value": null,
-      "updated_at": "2026-05-28 22:02:29"
+      "updated_at": "2026-05-28 22:19:13"
     }
   },
   "ratios": {
@@ -108,7 +108,7 @@
         "stat_text": "Robotics",
         "extra_value": null,
         "sort_order": 1,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_keyword",
@@ -117,7 +117,7 @@
         "stat_text": "Neural Network",
         "extra_value": null,
         "sort_order": 2,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_keyword",
@@ -126,7 +126,7 @@
         "stat_text": "Machine Learning",
         "extra_value": null,
         "sort_order": 3,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_keyword",
@@ -135,7 +135,7 @@
         "stat_text": "Deep Learning",
         "extra_value": null,
         "sort_order": 4,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_keyword",
@@ -144,7 +144,7 @@
         "stat_text": "Artificial Intelligence",
         "extra_value": null,
         "sort_order": 5,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_keyword",
@@ -153,7 +153,7 @@
         "stat_text": "Transformer",
         "extra_value": null,
         "sort_order": 6,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_keyword",
@@ -162,7 +162,7 @@
         "stat_text": "LLM",
         "extra_value": null,
         "sort_order": 7,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_keyword",
@@ -171,7 +171,7 @@
         "stat_text": "Reinforcement Learning",
         "extra_value": null,
         "sort_order": 8,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_keyword",
@@ -180,7 +180,7 @@
         "stat_text": "Computer Vision",
         "extra_value": null,
         "sort_order": 9,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_keyword",
@@ -189,7 +189,7 @@
         "stat_text": "Speech Recognition",
         "extra_value": null,
         "sort_order": 10,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_keyword",
@@ -198,7 +198,7 @@
         "stat_text": "Knowledge Graph",
         "extra_value": null,
         "sort_order": 11,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_keyword",
@@ -207,7 +207,7 @@
         "stat_text": "Diffusion Model",
         "extra_value": null,
         "sort_order": 12,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_keyword",
@@ -216,7 +216,7 @@
         "stat_text": "GAN",
         "extra_value": null,
         "sort_order": 13,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_keyword",
@@ -225,7 +225,7 @@
         "stat_text": "NLP (Natural Language Processing)",
         "extra_value": null,
         "sort_order": 14,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_keyword",
@@ -234,7 +234,7 @@
         "stat_text": "Autonomous Driving",
         "extra_value": null,
         "sort_order": 15,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       }
     ],
     "ai_venue": [
@@ -245,7 +245,7 @@
         "stat_text": "CVPR (Computer Vision and Pattern Recognition)",
         "extra_value": null,
         "sort_order": 1,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_venue",
@@ -254,7 +254,7 @@
         "stat_text": "ICRA (Robotics and Automation)",
         "extra_value": null,
         "sort_order": 2,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_venue",
@@ -263,7 +263,7 @@
         "stat_text": "ICML (International Conference on Machine Learning)",
         "extra_value": null,
         "sort_order": 3,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_venue",
@@ -272,7 +272,7 @@
         "stat_text": "ACL (Association for Computational Linguistics)",
         "extra_value": null,
         "sort_order": 4,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_venue",
@@ -281,7 +281,7 @@
         "stat_text": "ICCV (International Conference on Computer Vision)",
         "extra_value": null,
         "sort_order": 5,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_venue",
@@ -290,7 +290,7 @@
         "stat_text": "AAAI Conference on Artificial Intelligence",
         "extra_value": null,
         "sort_order": 6,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_venue",
@@ -299,7 +299,7 @@
         "stat_text": "IROS (Intelligent Robots and Systems)",
         "extra_value": null,
         "sort_order": 7,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_venue",
@@ -308,7 +308,7 @@
         "stat_text": "ECCV (European Conference on Computer Vision)",
         "extra_value": null,
         "sort_order": 8,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_venue",
@@ -317,7 +317,7 @@
         "stat_text": "IEEE TPAMI (Pattern Analysis and Machine Intelligence)",
         "extra_value": null,
         "sort_order": 9,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_venue",
@@ -326,7 +326,7 @@
         "stat_text": "EMNLP (Empirical Methods in NLP)",
         "extra_value": null,
         "sort_order": 10,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_venue",
@@ -335,7 +335,7 @@
         "stat_text": "IEEE TNNLS (Neural Networks and Learning Systems)",
         "extra_value": null,
         "sort_order": 11,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_venue",
@@ -344,7 +344,7 @@
         "stat_text": "NAACL (North American Chapter of ACL)",
         "extra_value": null,
         "sort_order": 12,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_venue",
@@ -353,7 +353,7 @@
         "stat_text": "Neural Computation",
         "extra_value": null,
         "sort_order": 13,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_venue",
@@ -362,7 +362,7 @@
         "stat_text": "JMLR (Journal of Machine Learning Research)",
         "extra_value": null,
         "sort_order": 14,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "ai_venue",
@@ -371,7 +371,7 @@
         "stat_text": "JAIR (Journal of Artificial Intelligence Research)",
         "extra_value": null,
         "sort_order": 15,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       }
     ],
     "cs_subfield": [
@@ -382,7 +382,7 @@
         "stat_text": "Artificial Intelligence",
         "extra_value": null,
         "sort_order": 1,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "cs_subfield",
@@ -391,7 +391,7 @@
         "stat_text": "Information Systems",
         "extra_value": null,
         "sort_order": 2,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "cs_subfield",
@@ -400,7 +400,7 @@
         "stat_text": "Computer Vision and Pattern Recognition",
         "extra_value": null,
         "sort_order": 3,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "cs_subfield",
@@ -409,7 +409,7 @@
         "stat_text": "Computer Networks and Communications",
         "extra_value": null,
         "sort_order": 4,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "cs_subfield",
@@ -418,7 +418,7 @@
         "stat_text": "Computational Theory and Mathematics",
         "extra_value": null,
         "sort_order": 5,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "cs_subfield",
@@ -427,7 +427,7 @@
         "stat_text": "Signal Processing",
         "extra_value": null,
         "sort_order": 6,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "cs_subfield",
@@ -436,7 +436,7 @@
         "stat_text": "Computer Science Applications",
         "extra_value": null,
         "sort_order": 7,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "cs_subfield",
@@ -445,7 +445,7 @@
         "stat_text": "Hardware and Architecture",
         "extra_value": null,
         "sort_order": 8,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "cs_subfield",
@@ -454,7 +454,7 @@
         "stat_text": "Human-Computer Interaction",
         "extra_value": null,
         "sort_order": 9,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "cs_subfield",
@@ -463,7 +463,7 @@
         "stat_text": "Computer Graphics and Computer-Aided Design",
         "extra_value": null,
         "sort_order": 10,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "cs_subfield",
@@ -472,7 +472,7 @@
         "stat_text": "Software",
         "extra_value": null,
         "sort_order": 11,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       }
     ],
     "domain_dist": [
@@ -483,7 +483,7 @@
         "stat_text": "Physical Sciences",
         "extra_value": null,
         "sort_order": 1,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "domain_dist",
@@ -492,7 +492,7 @@
         "stat_text": "Social Sciences",
         "extra_value": null,
         "sort_order": 2,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "domain_dist",
@@ -501,7 +501,7 @@
         "stat_text": "Health Sciences",
         "extra_value": null,
         "sort_order": 3,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "domain_dist",
@@ -510,7 +510,7 @@
         "stat_text": "Life Sciences",
         "extra_value": null,
         "sort_order": 4,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       }
     ],
     "field_dist": [
@@ -521,7 +521,7 @@
         "stat_text": "Medicine",
         "extra_value": null,
         "sort_order": 1,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -530,7 +530,7 @@
         "stat_text": "Social Sciences",
         "extra_value": null,
         "sort_order": 2,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -539,7 +539,7 @@
         "stat_text": "Engineering",
         "extra_value": null,
         "sort_order": 3,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -548,7 +548,7 @@
         "stat_text": "Computer Science",
         "extra_value": null,
         "sort_order": 4,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -557,7 +557,7 @@
         "stat_text": "Agricultural and Biological Sciences",
         "extra_value": null,
         "sort_order": 5,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -566,7 +566,7 @@
         "stat_text": "Biochemistry, Genetics and Molecular Biology",
         "extra_value": null,
         "sort_order": 6,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -575,7 +575,7 @@
         "stat_text": "Arts and Humanities",
         "extra_value": null,
         "sort_order": 7,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -584,7 +584,7 @@
         "stat_text": "Environmental Science",
         "extra_value": null,
         "sort_order": 8,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -593,7 +593,7 @@
         "stat_text": "Physics and Astronomy",
         "extra_value": null,
         "sort_order": 9,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -602,7 +602,7 @@
         "stat_text": "Economics, Econometrics and Finance",
         "extra_value": null,
         "sort_order": 10,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -611,7 +611,7 @@
         "stat_text": "Materials Science",
         "extra_value": null,
         "sort_order": 11,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -620,7 +620,7 @@
         "stat_text": "Psychology",
         "extra_value": null,
         "sort_order": 12,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -629,7 +629,7 @@
         "stat_text": "Chemistry",
         "extra_value": null,
         "sort_order": 13,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -638,7 +638,7 @@
         "stat_text": "Earth and Planetary Sciences",
         "extra_value": null,
         "sort_order": 14,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -647,7 +647,7 @@
         "stat_text": "Business, Management and Accounting",
         "extra_value": null,
         "sort_order": 15,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -656,7 +656,7 @@
         "stat_text": "Health Professions",
         "extra_value": null,
         "sort_order": 16,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -665,7 +665,7 @@
         "stat_text": "Neuroscience",
         "extra_value": null,
         "sort_order": 17,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -674,7 +674,7 @@
         "stat_text": "Mathematics",
         "extra_value": null,
         "sort_order": 18,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -683,7 +683,7 @@
         "stat_text": "Decision Sciences",
         "extra_value": null,
         "sort_order": 19,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "field_dist",
@@ -692,7 +692,7 @@
         "stat_text": "Immunology and Microbiology",
         "extra_value": null,
         "sort_order": 20,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       }
     ],
     "journal_coverage": [
@@ -703,7 +703,7 @@
         "stat_text": "Nature Portfolio",
         "extra_value": 754564.0,
         "sort_order": 1,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "journal_coverage",
@@ -712,7 +712,7 @@
         "stat_text": "Science / AAAS",
         "extra_value": 444415.0,
         "sort_order": 2,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "journal_coverage",
@@ -721,7 +721,7 @@
         "stat_text": "Cell Press",
         "extra_value": 286001.0,
         "sort_order": 3,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       }
     ],
     "lang_dist": [
@@ -732,7 +732,7 @@
         "stat_text": "en",
         "extra_value": null,
         "sort_order": 1,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "lang_dist",
@@ -741,7 +741,7 @@
         "stat_text": "zh",
         "extra_value": null,
         "sort_order": 2,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "lang_dist",
@@ -750,7 +750,7 @@
         "stat_text": "de",
         "extra_value": null,
         "sort_order": 3,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "lang_dist",
@@ -759,7 +759,7 @@
         "stat_text": "fr",
         "extra_value": null,
         "sort_order": 4,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "lang_dist",
@@ -768,7 +768,7 @@
         "stat_text": "es",
         "extra_value": null,
         "sort_order": 5,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "lang_dist",
@@ -777,7 +777,7 @@
         "stat_text": "ja",
         "extra_value": null,
         "sort_order": 6,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "lang_dist",
@@ -786,7 +786,7 @@
         "stat_text": "pt",
         "extra_value": null,
         "sort_order": 7,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "lang_dist",
@@ -795,7 +795,7 @@
         "stat_text": "it",
         "extra_value": null,
         "sort_order": 8,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "lang_dist",
@@ -804,7 +804,7 @@
         "stat_text": "nl",
         "extra_value": null,
         "sort_order": 9,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "lang_dist",
@@ -813,7 +813,7 @@
         "stat_text": "ru",
         "extra_value": null,
         "sort_order": 10,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       }
     ],
     "overview": [
@@ -824,7 +824,7 @@
         "stat_text": "知识记录总量",
         "extra_value": null,
         "sort_order": 1,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "overview",
@@ -833,7 +833,7 @@
         "stat_text": "学术文献总量",
         "extra_value": null,
         "sort_order": 2,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "overview",
@@ -842,7 +842,7 @@
         "stat_text": "图书总量",
         "extra_value": null,
         "sort_order": 3,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "overview",
@@ -851,7 +851,7 @@
         "stat_text": "AI-Ready含全文记录数",
         "extra_value": null,
         "sort_order": 4,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "overview",
@@ -860,7 +860,7 @@
         "stat_text": "OA开放获取文献数",
         "extra_value": null,
         "sort_order": 5,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "overview",
@@ -869,7 +869,7 @@
         "stat_text": "语言覆盖数",
         "extra_value": null,
         "sort_order": 6,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "overview",
@@ -878,7 +878,7 @@
         "stat_text": "期刊/会议覆盖数",
         "extra_value": null,
         "sort_order": 7,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "overview",
@@ -887,7 +887,7 @@
         "stat_text": "论文最早年份",
         "extra_value": null,
         "sort_order": 8,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "overview",
@@ -896,7 +896,7 @@
         "stat_text": "论文最晚年份",
         "extra_value": null,
         "sort_order": 9,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "overview",
@@ -905,7 +905,7 @@
         "stat_text": "论文峰值年份",
         "extra_value": 44646102.0,
         "sort_order": 10,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "overview",
@@ -914,7 +914,7 @@
         "stat_text": "图书最早年份",
         "extra_value": null,
         "sort_order": 11,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "overview",
@@ -923,7 +923,7 @@
         "stat_text": "图书最晚年份",
         "extra_value": null,
         "sort_order": 12,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "overview",
@@ -932,7 +932,7 @@
         "stat_text": "图书峰值年份",
         "extra_value": 5861232.0,
         "sort_order": 13,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       },
       {
         "category": "overview",
@@ -941,7 +941,7 @@
         "stat_text": "有全文OA论文数",
         "extra_value": null,
         "sort_order": 14,
-        "updated_at": "2026-05-28 22:02:29"
+        "updated_at": "2026-05-28 22:19:13"
       }
     ]
   }
