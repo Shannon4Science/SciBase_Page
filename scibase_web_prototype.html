@@ -859,9 +859,9 @@
           <div class="metric" data-stat-card="ebook_count"><span class="metric-value">加载中</span><span class="metric-label">图书总量，覆盖现代图书、古籍与手稿类知识资产</span></div>
           <div class="metric"><span class="metric-value">7000 万</span><span class="metric-label">专利规模，支撑查新、技术情报与产业研究</span></div>
           <div class="metric" data-stat-card="fulltext_count"><span class="metric-value">加载中</span><span class="metric-label">AI-Ready 含全文记录，适用于 RAG、训练与 Agent 调用</span></div>
-          <div class="metric" data-stat-card="language_count"><span class="metric-value">加载中</span><span class="metric-label">语言覆盖，支持跨语种知识发现与研究扩展</span></div>
+          <div class="metric" data-stat-card="fulltext_oa_paper_count"><span class="metric-value">加载中</span><span class="metric-label">OA 全文文献数，支持开放获取全文调用</span></div>
           <div class="metric" data-stat-card="venue_count"><span class="metric-value">加载中</span><span class="metric-label">期刊 / 会议 / Venue 覆盖，支持来源与学科过滤</span></div>
-          <div class="metric" data-stat-card="oa_count"><span class="metric-value">加载中</span><span class="metric-label">OA 开放获取文献</span></div>
+          <div class="metric" data-stat-card="paper_year_range"><span class="metric-value">加载中</span><span class="metric-label">文献覆盖年份，支持历史文献与最新研究发现</span></div>
         </div>
       </div>
 
@@ -1197,13 +1197,17 @@
       function updateMetricCards(data) {
         document.querySelectorAll("[data-stat-card]").forEach((card) => {
           const key = card.dataset.statCard;
-          const value = overviewValue(data, key);
           const valueNode = card.querySelector(".metric-value");
-          const labelNode = card.querySelector(".metric-label");
-          if (valueNode) valueNode.textContent = shortCount(value);
-          if (key === "oa_count" && labelNode && data.ratios?.oa_paper_pct != null) {
-            labelNode.textContent = `OA 开放获取文献，约占学术文献 ${percentFormat.format(data.ratios.oa_paper_pct)}%`;
+          if (!valueNode) return;
+
+          if (key === "paper_year_range") {
+            const minYear = overviewValue(data, "paper_year_min");
+            const maxYear = overviewValue(data, "paper_year_max");
+            valueNode.textContent = minYear && maxYear ? `${minYear}-${maxYear}` : "暂不可用";
+            return;
           }
+
+          valueNode.textContent = shortCount(overviewValue(data, key));
         });
       }
 
